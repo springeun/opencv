@@ -24,6 +24,16 @@ server.use(express.static(path.join(__dirname, "public")));
 server.get("/", (request, response) => {
   response.sendFile(path.join(__dirname, "/public/main.html"));
 });
+server.get("/cam", (request, response) => {
+  response.sendFile(path.join(__dirname, "/public/cam.html"));
+});
+
+
+
+//로그인 및 회원가입 기능 구현
+
+
+//여기까지
 
 server.listen(PORT, () => {
   console.log(`서버가 포트 ${PORT}에서 실행 중입니다.`);

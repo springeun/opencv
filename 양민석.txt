@@ -1,0 +1,47 @@
+teachable machine + web
+
+-tm 을 이용해 원하는 타겟을 충분히 만들고 모델 생성
+
+-모델 생성 후 js 스니펫을 활용
+
+-예측 결과에 따른 웹페이지의 상호작용 아이디어로 내보자!
+
+ex)사람이 있을때 다른화면을 띄우자
+
+-이때 권장사항! 라이브러리 조사 및 적용을 적극적으로 하자
+
+-- sass : css확장판
+-- jquery dom 조작 라이브러리
+--p5.js 인터랙티브 웹 라이브러리
+--three.js 3차원 객체 라이브러리
+--chart.js 웹용 차트 라이브러리
+
+
+const express = require("express")
+const server = express();
+const bodyParser = require('body-parser')
+//const { auth } = require("./config")
+//const { createUserWithEmailAndPassword } = require("firebase/auth")
+//const { signInWithEmailAndPassword } = require("firebase/auth")
+//const {signOut} = require("firebase/auth");
+ 
+// 바디 파싱
+server.use(bodyParser.json());
+server.use(bodyParser.urlencoded( { extended : true } ));
+
+const PORT = process.env.PORT || 3000;
+const ref = db.ref()
+
+server.use(express.static(__dirname + "/public"))
+
+server.get("/", (request, response) => {
+  console.log("!")
+  if(auth.currentUser){
+    response.sendFile(__dirname + "/public/main.html")
+
+  }else{
+    response.redirect("/index")
+  }
+})
+
+
