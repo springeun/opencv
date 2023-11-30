@@ -3,7 +3,6 @@ const server = express();
 const bodyParser = require('body-parser')
 const path = require("path");
 
-
 //const { auth } = require("./config")
 //const { createUserWithEmailAndPassword } = require("firebase/auth")
 //const { signInWithEmailAndPassword } = require("firebase/auth")
@@ -27,14 +26,20 @@ server.get("/", (request, response) => {
 server.get("/cam", (request, response) => {
   response.sendFile(path.join(__dirname, "/public/cam.html"));
 });
-
+server.get("/study", (request, response) => {
+  response.sendFile(path.join(__dirname, "/public/study.html"));
+});
 
 
 //로그인 및 회원가입 기능 구현
 
-
 //여기까지
-
+server.all("/*", (request, response) => {
+  response.status(404).json({
+    "status" : 404,
+    "message" : "BAD REQUEST!!"
+  });
+})
 server.listen(PORT, () => {
   console.log(`서버가 포트 ${PORT}에서 실행 중입니다.`);
 });
