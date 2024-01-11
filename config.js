@@ -10,14 +10,7 @@ const { initializeApp } = require("firebase/app");
 const { getAuth }  = require("firebase/auth");
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCizOMIIUVXSBDwNlWXqPinvSJS8u9rMX8",
-  authDomain: "projectpart3-d5686.firebaseapp.com",
-  databaseURL: "https://projectpart3-d5686-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "projectpart3-d5686",
-  storageBucket: "projectpart3-d5686.appspot.com",
-  messagingSenderId: "28092958362",
-  appId: "1:28092958362:web:af02d07d2a9c55d2800123",
-  measurementId: "G-GYQ26RWJN6"
+--
 };
 
 const app = initializeApp(firebaseConfig);
